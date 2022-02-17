@@ -3,11 +3,14 @@ from termcolor import colored
 import string
 import time
 
+
 #gives the user options
 logins = True
-user = input("What is your username? ")
+user = input("What username do you want? ")
 database = {}
 database[user] = ""#adds new user to the database 
+
+
 print("*****************")
 print("1 - Sign up")
 print("2 - Login")
@@ -28,9 +31,9 @@ if option == "1":
     print("Finalizing..")
     time.sleep(1)
     print(f"Your new password is {fin}")
+    with open("passwords.txt", "a") as passwords:
+      passwords.write(f"\nPassword for {user}: {fin}")
  password()
-
-
 
 if option == "2" or logins == True:
     username, password = input("What is your username? "), input("What is your password? ")  
@@ -41,5 +44,5 @@ if option == "2" or logins == True:
           print("That password is incorrect! Please try again!")
     else:
        print("We don't recognize that user please sign up!")
-         
+      
 
