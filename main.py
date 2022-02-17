@@ -31,12 +31,15 @@ if option == "1":
  password()
 
 
+
 if option == "2" or logins == True:
-    username, password = input("What is your username? "), input("What is your password? ")
+    username, password = input("What is your username? "), input("What is your password? ")  
     if username in database:
        if password == database[user]:
-           print(f"Welcome back {username}!")
+          print(f"Welcome back {username}!")
        else:
-            print("That password is incorrect! Please try again!")
+          print("That password is incorrect! Please try again!")
     else:
-      print("We don't recognize that user please sign up!")
+       print("We don't recognize that user please sign up!")
+         
+
